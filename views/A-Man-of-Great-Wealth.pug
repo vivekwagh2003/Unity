@@ -1,0 +1,29 @@
+extends base.pug
+
+block scripts
+    script(src='/static/index.js')
+
+block style
+    style 
+        include ../static/style.css
+        include ../static/styleProduct.css
+
+block content 
+    div.container
+        div.box
+            img(src="/static/img/newarrivalstshirt.png")
+        div.content
+            h2 A Man of Great Wealth tee
+            h6 Rs. 2,500.00
+            h3 Size - Adult
+            h4 Quantity
+            div.quantity-container
+                input#quantity-input(type="number" min="1" max="100" value="1")
+
+            // Add to Cart button
+            button.btn-add-to-cart(type="button") Add to Cart
+
+            // Pay via Gpay button
+            button.btn-pay-gpay(type="button")
+                span Pay via 
+                img(src="/static/img/gpay-logo.avif" alt="Gpay Logo")

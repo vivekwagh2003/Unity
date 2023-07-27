@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title Vivek's Ecommerce Website 
+    block scripts
+    block style
+      style 
+        include ../static/style.css
+
+  body
+    nav#navbar
+        ul
+            li#logo
+              a(href="/" )
+                  img(src="/static/img/logo.png", alt="logo" )
+            li #[a(href="/shop") Shop] 
+            li #[a(href="/cart") Cart]
+            li #[a(href="/contact") Contact Us]
+
+    block content
+    section#footer
+        h3 Copyright © 2023 VivekEcommerceWebsite.com | All rights reserved

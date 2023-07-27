@@ -1,0 +1,36 @@
+extends base.pug
+
+block scripts
+    script(src='/index.js')
+
+block style
+    style 
+      include ../static/style.css
+
+block content 
+    section#IntroSection 
+        div#name Welcome to Vivek's Ecommerce Website   
+    section#MissionSection
+        h2 New Arrivals    
+        div.card
+            li #[a(href="/A-Man-Of-Great-Wealth") A Man of Great Wealth Tee] 
+                div.card-img  
+                    img(src="/static/img/newarrivalstshirt.png")  
+                
+                 
+        div.card
+            li #[a(href="/Gato-Loco") Gato Loco cap]  
+                div.card-img  
+                    img(src="/static/img/gatolococap.png")  
+        div.card
+            li #[a(href="/Skateboarder-Hoodie") Skateboarder Hoodie]  
+                div.card-img  
+                    img(src="/static/img/skateboarderhoodie.png")  
+    section#SponsorsSection
+        h2 Our Sponsors      
+        div#sponsors 
+            img(src="/static/img/RedBull.png" , class="spImage") 
+            img(src="/static/img/MtnDew.png" , class="spImage") 
+            img(src="/static/img/BananaBoat.png" , class="spImage") 
+            img(src="/static/img/Vans.png" , class="spImage") 
+    

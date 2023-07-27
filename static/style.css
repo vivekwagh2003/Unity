@@ -1,0 +1,185 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap'); */
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: "Fasthand";
+  color:black;
+  /* background-color: black; */
+}
+#navbar {
+  background-color: rgb(255, 251, 244);
+  padding: 1vh 1vw;
+}
+#navbar ul {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+}
+#navbar li {
+  list-style: none;
+}
+#navbar li a {
+  text-decoration: none;
+  padding: 0.5vh 0.5vw;
+  /* font-size: 1rem; */
+  font-size: 20px;
+  color: black;
+}
+#navbar li a:hover {
+  color: red;
+}
+#IntroSection {
+  background: center / cover no-repeat url(/static/img/hero4.png);
+  height: 80vh;
+  /* background-color: red; */
+  color: white;
+  font-size: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border-radius: 10px; */
+  border: 2px solid white;
+  /* background-color: black; */
+}
+#logo {
+  display: flex;
+  color: white;
+  align-items: center;
+  margin: 0px 14px;
+  font-size: 20px;
+}
+#logo img {
+  height: 42px;
+}
+#IntroSection #name {
+  font-size: 80px;
+  background: none;
+  color: black;
+}
+#small {
+  font-size: 20px;
+  font-family: "Delicious Handrawn", cursive;
+  font-weight: bolder;
+  background: none;
+}
+#SponsorsSection {
+  height: 250px;
+  background-color: rgb(255, 251, 244);
+  text-align: center;
+  justify-content: center;
+  /* border: 2px solid white; */
+}
+#SponsorsSection h2 {
+  color: black;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 3vh;
+}
+#SponsorsSection h2:hover {
+  color: red;
+}
+#MissionSection {
+  height: 300px;
+  background-color: rgb(255, 251, 244);
+  text-align: center;
+  justify-content: center;
+  /* padding-bottom: 20px; */
+  /* border:2px solid white; */
+  /* border-top: none; */
+}
+#MissionSection h2 {
+  color: black;
+  text-align: center;
+  margin-bottom: 1vh;
+  font-size: 50px;
+  background-color: rgb(255, 251, 244);
+}
+#MissionSection h2:hover {
+  color: red;
+}
+.card {
+  width: 23%;
+  height: 200px;
+  background-color: rgb(255, 251, 244);
+  color: black;
+  margin: 10px;
+  display: inline-block;
+  justify-content: center;
+  text-align: center;
+}
+.card h3 {
+  justify-content: center;
+  text-align: center;
+  margin: 12px;
+  font-size: 20px;
+}
+/* .card h3:hover{
+      color: red;
+  } */
+.card-box {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.card-img {
+  margin-top: 1vh;
+  height: 131px;
+  /* padding: 0px 14px; */
+  /* filter: invert(1); */
+}
+.card li{
+  list-style: none;
+}
+.card-img img {
+  height: inherit;
+  margin-left: 5px;
+}
+.card-content {
+  margin-right: 40px;
+}
+.card-content p {
+  font-size: 20px;
+  /* color: red; */
+}
+/* .card-content p:hover{
+      color: red;
+  } */
+
+#sponsors {
+  height: 120px;
+  max-width: 1000px;
+  margin: auto;
+  /* border: 2px solid white; */
+}
+.spImage {
+  height: 80%;
+  margin: 20px;
+  margin-top: none;
+  margin-bottom: none;
+}
+/* .card #a{
+      color: greenyellow;
+  }
+  .card #b{
+      color: yellow;
+  }
+  .card #c{
+      color: rgb(0, 255, 225);
+  } */
+#footer {
+  height: 60px;
+  background-color: rgb(255, 251, 244);
+}
+#footer h3 {
+  padding-top: 16px;
+  color: black;
+  font-size: 20px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-family: "Fasthand";
+}
