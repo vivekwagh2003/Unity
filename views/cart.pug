@@ -1,7 +1,7 @@
 extends base.pug
 
 block scripts
-    script(src='/index.js')
+    script(src='../static/index.js')
 
 block style
     style 
@@ -9,42 +9,22 @@ block style
         include ../static/styleCart.css
         link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css", integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==", crossorigin="anonymous", referrerpolicy="no-referrer")
 
-block content 
-    div.container
-        div.continueContainer
-            li #[a(href="/shop") Continue $hopping]
-        h1 Your cart
-        if cartItems.length > 0
-            table.cart-items
-                thead
-                    tr
-                        th.leftItem(colspan="1", scope="col") Product
-                        th.middleItem(colspan="1", scope="col") Product Name
-                        th.rightItem(colspan="1", scope="col") Quantity
-                        th(colspan="1", scope="col") Total
-                        th(colspan="1", scope="col") Actions
-                tbody 
-                    // Loop through the cart items and display them in the table
-                    each item in cartItems
-                        tr.cart-item
-                            // Display the item details here
-                            td.leftItem
-                                img(src="/static/img/cactustee.png" class="productImage")
-                            td 
-                                | #{item.name}    
-                            td.middleItem
-                                | #{item.quantity} 
-                            td.rightItem
-                                // Calculate the total price (item price * quantity)
-                                | Rs.#{item.price * item.quantity} 
-                            td
-                                // Add delete button for each item
-                                button.btn-delete(type="button" onclick="window.location.href='https://www.google.com/'")
-                                    | Delete
-
-            div.subTotalContainer
-                | Subtotal: Rs. #{subtotal}
-                button.btn-gpay.fade-out(type="button")
-                    img(src="/static/img/gpaybuttonlogo.png" alt="Gpay Logo")
-        else
-            p Your cart is empty. Add items to continue shopping.
+block content
+  div#cart-contents
+    h1 Your Cart
+    table.table
+      thead
+        tr
+          th Product
+          th Product Name
+          th Quantity
+          th Price
+      tbody
+        each item in cartItems
+          tr
+            td
+              img.productImage(src=item.proImage, alt=item.proName)
+            td #{item.proName}
+            td #{item.quantity}
+            td #{item.price}
+    p.subtotal Subtotal : Rs. #{subtotal}

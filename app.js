@@ -22,8 +22,18 @@ const contactschema = new mongoose.Schema({
   address: String,
   email: String,
   desc: String,
+  price: Number,
 });
 const contact = mongoose.model("contact", contactschema);
+
+const cartschema = new mongoose.Schema({
+  proName: String,
+  proImage:String,
+  quantity: Number,  
+  size:String,
+  price: Number,   
+});
+const cart = mongoose.model("cart", cartschema);
 
 // EXPRESS SPECIFIC STUFF
 app.use("/static", express.static("static")); // For serving static files
@@ -57,31 +67,6 @@ app.get("/styles", (req, res) => {
 app.get("/shop", (req, res) => {
   const params = {};
   res.status(200).render("shop.pug", params);
-});
-
-// app.js (server-side)
-
-// ... (other code)
-
-app.get("/cart", (req, res) => {
-  const cartItems = [
-    // Add your cart item objects here
-    {
-      image: "/static/img/gatolococap.png",
-      name: "Cactus-Tee",
-      quantity: 2,
-      price: 3000,
-    },
-    
-  ];
-
-  // Calculate subtotal
-  const subtotal = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
-
-  res.status(200).render("cart.pug", { cartItems, subtotal });
 });
 
 app.get("/thatwasepiccap", (req, res) => {
@@ -130,11 +115,113 @@ app.post("/contact", (req, res) => {
     .save()
     .then(() => {
       res.send("this item has been saved to the database");
-      // agar alert box use karna he instead of this item has been saved to the databse then ull have to use bootstrap
     })
     .catch(() => {
       res.status(400).send("item was not saved to the database");
     });
+});
+
+app.post("/Skateboarder-Hoodie", (req, res) => {
+  var mydata = new cart(req.body);
+  mydata
+    .save()
+    .then(() => {
+      res.redirect("/cart"); // Redirect to the cart page
+    })
+    .catch(() => {
+      res.status(400).send("item was not added to the cart");
+    });
+});
+app.post("/Positive-Impression-Tee", (req, res) => {
+  var mydata = new cart(req.body);
+  mydata
+    .save()
+    .then(() => {
+      res.redirect("/cart"); // Redirect to the cart page
+    })
+    .catch(() => {
+      res.status(400).send("item was not added to the cart");
+    });
+});
+app.post("/That-Was-Epic-Hoodie", (req, res) => {
+  var mydata = new cart(req.body);
+  mydata
+    .save()
+    .then(() => {
+      res.redirect("/cart"); // Redirect to the cart page
+    })
+    .catch(() => {
+      res.status(400).send("item was not added to the cart");
+    });
+});
+app.post("/Live-Life", (req, res) => {
+  var mydata = new cart(req.body);
+  mydata
+    .save()
+    .then(() => {
+      res.redirect("/cart"); // Redirect to the cart page
+    })
+    .catch(() => {
+      res.status(400).send("item was not added to the cart");
+    });
+});
+app.post("/Gato-Loco", (req, res) => {
+  var mydata = new cart(req.body);
+  mydata
+    .save()
+    .then(() => {
+      res.redirect("/cart"); // Redirect to the cart page
+    })
+    .catch(() => {
+      res.status(400).send("item was not added to the cart");
+    });
+});
+app.post("/thatwasepiccap", (req, res) => {
+  var mydata = new cart(req.body);
+  mydata
+    .save()
+    .then(() => {
+      res.redirect("/cart"); // Redirect to the cart page
+    })
+    .catch(() => {
+      res.status(400).send("item was not added to the cart");
+    });
+});
+app.post("/Cactus-Tee", (req, res) => {
+  var mydata = new cart(req.body);
+  mydata
+    .save()
+    .then(() => {
+      res.redirect("/cart"); // Redirect to the cart page
+    })
+    .catch(() => {
+      res.status(400).send("item was not added to the cart");
+    });
+});
+app.post("/A-Man-of-Great-Wealth", (req, res) => {
+  var mydata = new cart(req.body);
+  mydata
+    .save()
+    .then(() => {
+      res.redirect("/cart"); // Redirect to the cart page
+    })
+    .catch(() => {
+      res.status(400).send("item was not added to the cart");
+    });
+});
+
+app.get("/cart", async (req, res) => {
+  try {
+    const cartItems = await cart.find(); // Fetch all items from the cart collection
+    const subtotal = cartItems.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
+    );
+    res.status(200).render("cart.pug", { cartItems, subtotal });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error fetching cart items");
+  }
 });
 
 // START THE SERVER

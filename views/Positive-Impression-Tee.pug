@@ -15,15 +15,13 @@ block content
         div.content
             h1 Positive Impression Tee
             h6 Rs. 3,000.00
-            h3 Size - Adult
-            h4 Quantity
-            div.quantity-container
-                input#quantity-input(type="number" min="1" max="100" value="1")
-
-            // Add to Cart button
-            button.btn-add-to-cart(type="button") Add to Cart
-
-            // Pay via Gpay button
-            button.btn-pay-gpay(type="button")
-                span Pay via 
-                img(src="/static/img/gpay-logo.avif" alt="Gpay Logo")
+            form(action="/Positive-Impression-Tee",method="post",class="myForm")
+                input(type="hidden",class="myInput",name="proName",value="Positive Impression Tee")
+                input(type="hidden", class="myInput", name="proImage", value="../static/img/positiveimpressiontee.png")
+                input(type="text",class="myInput",name="quantity",placeholder="qty" alt="1")
+                input(type="hidden",class="myInput",name="size",value="Adult")
+                input(type="hidden",class="myInput",name="price",value="3000")
+                //- button.btn-add-to-cart(type="button") Add to Cart
+                button(class="btn") Add to cart 
+                
+            
