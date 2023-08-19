@@ -19,6 +19,7 @@ block content
           th Product Name
           th Quantity
           th Price
+          th Actions
       tbody
         each item in cartItems
           tr
@@ -27,4 +28,7 @@ block content
             td #{item.proName}
             td #{item.quantity}
             td #{item.price}
+            td
+              form(action=`/delete/${item._id}`, method="POST")
+                button.delete-button(type="submit") Delete
     p.subtotal Subtotal : Rs. #{subtotal}

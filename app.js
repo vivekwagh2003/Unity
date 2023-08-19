@@ -28,10 +28,10 @@ const contact = mongoose.model("contact", contactschema);
 
 const cartschema = new mongoose.Schema({
   proName: String,
-  proImage:String,
-  quantity: Number,  
-  size:String,
-  price: Number,   
+  proImage: String,
+  quantity: Number,
+  size: String,
+  price: Number,
 });
 const cart = mongoose.model("cart", cartschema);
 
@@ -221,6 +221,16 @@ app.get("/cart", async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).send("Error fetching cart items");
+  }
+});
+app.post("/delete/:id", async (req, res) => {
+  try {
+    const productId = req.params.id;
+    await cart.findByIdAndDelete(productId);
+    res.redirect("/cart");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error deleting item from cart");
   }
 });
 
