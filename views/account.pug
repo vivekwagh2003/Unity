@@ -1,0 +1,26 @@
+extends base.pug
+
+block scripts
+    script(src='/index.js')
+    script(src=" https://unpkg.com/boxicons@2.1.4/dist/boxicons.js") 
+
+block style
+    style 
+      include ../static/style.css
+      include ../static/styleAccount.css
+
+block content 
+    div.container
+        h1 Sign in
+        h5 Become a member — don’t miss out on deals, offers, discounts and bonus vouchers
+        div.email-user
+                input(type="email", id="email", name="email",placeholder="email", required)
+                box-icon(name='user-pin')
+                br
+        div.password-lock
+                input(type="password", id="password", name="password",placeholder="password", required) 
+                box-icon(name='lock')
+                br
+        div.log-in-button
+                button.btn(type="submit") Login
+                button.btn(type="submit") Become a member

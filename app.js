@@ -69,6 +69,11 @@ app.get("/shop", (req, res) => {
   res.status(200).render("shop.pug", params);
 });
 
+app.get("/account", (req, res) => {
+  const params = {};
+  res.status(200).render("account.pug", params);
+});
+
 app.get("/thatwasepiccap", (req, res) => {
   const params = {};
   res.status(200).render("thatwasepiccap.pug", params);

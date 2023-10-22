@@ -5,7 +5,7 @@
   box-sizing: border-box;
   padding: 0;
   font-family: "Fasthand";
-  color:black;
+  color: black;
   /* background-color: black; */
 }
 #navbar {
@@ -131,7 +131,7 @@
   /* padding: 0px 14px; */
   /* filter: invert(1); */
 }
-.card li{
+.card li {
   list-style: none;
 }
 .card-img img {
@@ -182,4 +182,5 @@
   text-align: center;
   justify-content: center;
   font-family: "Fasthand";
+
 }

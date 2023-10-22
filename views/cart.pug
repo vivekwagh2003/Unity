@@ -2,6 +2,7 @@ extends base.pug
 
 block scripts
     script(src='../static/index.js')
+    script(src=" https://unpkg.com/boxicons@2.1.4/dist/boxicons.js") 
 
 block style
     style 
@@ -32,3 +33,5 @@ block content
               form(action=`/delete/${item._id}`, method="POST")
                 button.delete-button(type="submit") Delete
     p.subtotal Subtotal : Rs. #{subtotal}
+    form(action="/pay", method="POST")
+      button.pay-button(type="submit") Pay via Pay

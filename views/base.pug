@@ -3,6 +3,7 @@ html
   head
     title Vivek's Ecommerce Website 
     block scripts
+      script(src=" https://unpkg.com/boxicons@2.1.4/dist/boxicons.js") 
     block style
       style 
         include ../static/style.css
@@ -13,9 +14,18 @@ html
             li#logo
               a(href="/" )
                   img(src="/static/img/logo.png", alt="logo" )
-            li #[a(href="/shop") Shop] 
-            li #[a(href="/cart") Cart]
-            li #[a(href="/contact") Contact Us]
+            li
+              a(href="/account")
+                box-icon(name='user')
+            li
+              a(href="/shop")
+                box-icon(name='store')
+            li 
+              a(href="/cart")
+                box-icon(name='cart')
+            li 
+              a(href="/contact")
+                box-icon(name='phone-call')
 
     block content
     section#footer
