@@ -2,25 +2,41 @@ extends base.pug
 
 block scripts
     script(src='/index.js')
-    script(src=" https://unpkg.com/boxicons@2.1.4/dist/boxicons.js") 
+    script(src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js") 
+    script.
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById('password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                document.getElementById('toggleButton').innerHTML = "<box-icon type='solid' name='low-vision'></box-icon>";
+            } else {
+                passwordInput.type = 'password';
+                document.getElementById('toggleButton').innerHTML = "<box-icon type='solid' name='low-vision'></box-icon>";
+            }
+        }
 
 block style
     style 
-      include ../static/style.css
-      include ../static/styleAccount.css
+        include ../static/style.css
+        include ../static/styleAccount.css
+    link(rel="stylesheet", href="https://www.w3schools.com/w3css/4/w3.css")
 
 block content 
     div.container
         h1 Sign in
-        h5 Become a member — don’t miss out on deals, offers, discounts and bonus vouchers
+        h5 Become a member — don’t miss out on deals, offers, discounts, and bonus vouchers
         div.email-user
-                input(type="email", id="email", name="email",placeholder="email", required)
-                box-icon(name='user-pin')
-                br
+            input(type="email", id="email", name="email", placeholder="email", required)
+            box-icon(name='user-pin')
+            br
         div.password-lock
-                input(type="password", id="password", name="password",placeholder="password", required) 
-                box-icon(name='lock')
-                br
+            span.pass
+                input(type="password", id="password", name="password", placeholder="password", class="w3-input w3-border-0", required)
+                button(id="toggleButton", onclick="togglePasswordVisibility()")
+                    | 
+                    |   <box-icon type='solid' name='low-vision'></box-icon>
+            box-icon(name='lock')
+
         div.log-in-button
-                button.btn(type="submit") Login
-                button.btn(type="submit") Become a member
+            button.btn(type="submit") Login
+            button.btn(type="submit") Become a member

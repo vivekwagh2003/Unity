@@ -173,6 +173,7 @@
 #footer {
   height: 60px;
   background-color: rgb(255, 251, 244);
+  bottom: 0%;
 }
 #footer h3 {
   padding-top: 16px;
